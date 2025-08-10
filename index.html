@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Corner - Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Easy Theme Customization */
+        :root {
+            --primary-color: #006241; /* Starbucks Green */
+            --secondary-color: #d4e9e2; /* Light Green Accent */
+            --dark-color: #1e3932;      /* Dark Green Text */
+            --background-color: #f9f9f9;
+            --card-background: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --font-main: 'Lato', sans-serif;
+            --font-headings: 'Merriweather', serif;
+        }
 
+        /* --- Global Styles & Resets --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background-color: var(--card-background);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            font-family: var(--font-headings);
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a:hover, .main-nav a:focus {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        /* --- Main Content & Menu Sections --- */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+
+        .menu-section-title {
+            font-family: var(--font-headings);
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block; /* To make border only as wide as text */
+        }
+
+        .title-wrapper {
+            text-align: center; /* Center the title container */
+            margin-bottom: 2rem;
+        }
+
+        /* --- Menu Grid (Responsive) --- */
+        .menu-grid {
+            display: grid;
+            /* This creates responsive columns:
+               - auto-fit: create as many columns as can fit
+               - minmax(300px, 1fr): each column is at least 300px, but can grow to fill space (1fr)
+            */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Menu Item Card --- */
+        .menu-item {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            overflow: hidden; /* Ensures image respects the border radius */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* Ensures image covers the area without distortion */
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allows content to fill the card height */
+        }
+
+        .menu-item-title {
+            font-family: var(--font-headings);
+            font-size: 1.25rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-description {
+            flex-grow: 1; /* Pushes the price to the bottom */
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .menu-item-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: right;
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--background-color);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        /* --- Media Query for smaller screens --- */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .main-nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            .menu-section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>The Coffee Corner</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#espresso">Espresso & Coffee</a></li>
+                <li><a href="#frappuccino">Frappuccino®</a></li>
+                <li><a href="#teas">Teas & Lattes</a></li>
+                <li><a href="#bakery">Bakery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- ===== Espresso & Coffee Section ===== -->
+        <section id="espresso" class="menu-section">
+            <div class="title-wrapper">
+                <h2 class="menu-section-title">Espresso & Coffee</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a7ec2f4?q=80&w=1887&auto=format&fit=crop" alt="Caffè Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Caffè Latte</h3>
+                        <p class="menu-item-description">Our rich, full-bodied espresso balanced with steamed milk and a light layer of foam. A perfect start to your morning.</p>
+                        <p class="menu-item-price">$4.25</p>
+                    </div>
+                </article>
+                <!-- Item 2 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1557006021-b961553985c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Macchiato" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Caramel Macchiato</h3>
+                        <p class="menu-item-description">Freshly steamed milk with vanilla-flavored syrup, marked with espresso and topped with a caramel drizzle.</p>
+                        <p class="menu-item-price">$4.75</p>
+                    </div>
+                </article>
+                <!-- Item 3 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1511920183353-3c9c35b572e3?q=80&w=1887&auto=format&fit=crop" alt="Caffè Americano" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Caffè Americano</h3>
+                        <p class="menu-item-description">Espresso shots topped with hot water to produce a light layer of crema in a cup with the depth of a classic coffee.</p>
+                        <p class="menu-item-price">$3.25</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== Frappuccino Section ===== -->
+        <section id="frappuccino" class="menu-section">
+            <div class="title-wrapper">
+                <h2 class="menu-section-title">Frappuccino® Blended Beverages</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1570577936162-65207c082717?q=80&w=1958&auto=format&fit=crop" alt="Java Chip Frappuccino" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Java Chip Frappuccino®</h3>
+                        <p class="menu-item-description">We blend mocha sauce, Frappuccino® chips with coffee, milk and ice, then top it with whipped cream and a mocha drizzle.</p>
+                        <p class="menu-item-price">$5.45</p>
+                    </div>
+                </article>
+                <!-- Item 2 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1626082627936-b942369680c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Frappuccino" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Caramel Frappuccino®</h3>
+                        <p class="menu-item-description">Caramel syrup meets coffee, milk and ice for a rendezvous in the blender, while whipped cream and caramel sauce layer the love on top.</p>
+                        <p class="menu-item-price">$5.45</p>
+                    </div>
+                </article>
+                <!-- Item 3 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1625224322499-56d13589c372?q=80&w=1887&auto=format&fit=crop" alt="Strawberry Crème Frappuccino" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Strawberry Crème Frappuccino®</h3>
+                        <p class="menu-item-description">Summer's favorite fruit is the star of this delicious Frappuccino® Blended Beverage—a blend of ice, milk and strawberry puree.</p>
+                        <p class="menu-item-price">$5.25</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- ===== Teas & Lattes Section ===== -->
+        <section id="teas" class="menu-section">
+            <div class="title-wrapper">
+                <h2 class="menu-section-title">Teas & Lattes</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1578899817502-06951a35b448?q=80&w=1887&auto=format&fit=crop" alt="Chai Tea Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Chai Tea Latte</h3>
+                        <p class="menu-item-description">Black tea infused with cinnamon, clove and other warming spices is combined with steamed milk for the perfect balance of sweet and spicy.</p>
+                        <p class="menu-item-price">$4.65</p>
+                    </div>
+                </article>
+                <!-- Item 2 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563822552862-8c85c0a3f019?q=80&w=1887&auto=format&fit=crop" alt="Matcha Tea Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Matcha Tea Latte</h3>
+                        <p class="menu-item-description">A smooth and creamy matcha sweetened just right and served with steamed milk. A perfect zen-like beverage.</p>
+                        <p class="menu-item-price">$4.65</p>
+                    </div>
+                </article>
+                 <!-- Item 3 -->
+                 <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1601923480790-2559b3f2a895?q=80&w=1964&auto=format&fit=crop" alt="Iced Passion Tango Tea" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Iced Passion Tango™ Tea</h3>
+                        <p class="menu-item-description">A vibrant blend of hibiscus, lemongrass and apple, hand-shaken with ice. A refreshingly caffeine-free herbal tea.</p>
+                        <p class="menu-item-price">$3.25</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- ===== Bakery Section ===== -->
+        <section id="bakery" class="menu-section">
+            <div class="title-wrapper">
+                <h2 class="menu-section-title">Bakery</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1587574266813-59752535b47a?q=80&w=1947&auto=format&fit=crop" alt="Butter Croissant" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Butter Croissant</h3>
+                        <p class="menu-item-description">A classic, flaky, and buttery croissant. Pairs perfectly with any of our coffee or espresso beverages.</p>
+                        <p class="menu-item-price">$3.25</p>
+                    </div>
+                </article>
+                <!-- Item 2 -->
+                <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1616692224168-3565cf859a0f?q=80&w=1887&auto=format&fit=crop" alt="Chocolate Chip Cookie" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Chocolate Chip Cookie</h3>
+                        <p class="menu-item-description">Soft and chewy, packed with semisweet chocolate chunks. A timeless treat to satisfy your sweet tooth.</p>
+                        <p class="menu-item-price">$2.75</p>
+                    </div>
+                </article>
+                 <!-- Item 3 -->
+                 <article class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1590398092289-5b7f14371758?q=80&w=1887&auto=format&fit=crop" alt="Blueberry Muffin" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Blueberry Muffin</h3>
+                        <p class="menu-item-description">A fluffy muffin bursting with juicy blueberries and a hint of lemon, topped with a crunchy sugar crust.</p>
+                        <p class="menu-item-price">$3.45</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 The Coffee Corner. All Rights Reserved.</p>
+        <p>123 Coffee Lane, Phnom Penh, Cambodia</p>
+    </footer>
+
+</body>
+</html>
