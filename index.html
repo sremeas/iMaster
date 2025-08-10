@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- === Favicon and App Icons === -->
+    <!-- === Favicon and App Icons (filename corrected) === -->
     <!-- Standard Favicon for browsers -->
-    <link rel="icon" type="image/png" href="imaster.PNG">
+    <link rel="icon" type="image/png" href="imaster.png">
     <!-- Apple Touch Icon for iPhone and iPad -->
-    <link rel="apple-touch-icon" href="imaster.PNG">
+    <link rel="apple-touch-icon" href="imaster.png">
     <!-- Icon for Android devices -->
-    <link rel="icon" sizes="192x192" href="imaster.PNG">
+    <link rel="icon" sizes="192x192" href="imaster.png">
 
     <title>iMaster Café - Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
             font-family: var(--font-main);
             background-color: var(--background-color);
             color: var(--dark-color);
-            line-height: 1.6; /* Adjusted line height */
+            line-height: 1.6;
         }
 
         img {
@@ -88,7 +88,7 @@
             font-family: var(--font-headings);
             color: var(--dark-color);
             margin: 0;
-            font-size: 1.5rem; /* Reduced font size */
+            font-size: 1.5rem;
         }
 
         .header-right {
@@ -108,15 +108,15 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.8rem; /* Reduced gap */
+            gap: 0.8rem;
         }
 
         .main-nav a {
             text-decoration: none;
             color: var(--primary-color);
             font-weight: 700;
-            font-size: 0.9rem; /* Reduced font size */
-            padding: 0.4rem 0.8rem; /* Reduced padding */
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 20px;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -208,7 +208,6 @@
             color: var(--dark-color);
         }
 
-
         /* --- Main Content & Menu Sections --- */
         .container {
             max-width: 1200px;
@@ -217,12 +216,12 @@
         }
 
         .menu-section {
-            margin-bottom: 3.5rem; /* Reduced margin */
+            margin-bottom: 3.5rem;
         }
 
         .menu-section-title {
             font-family: var(--font-headings);
-            font-size: 2.2rem; /* Reduced font size */
+            font-size: 2.2rem;
             color: var(--dark-color);
             text-align: center;
             margin-bottom: 2rem;
@@ -238,8 +237,8 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced min-width */
-            gap: 1.5rem; /* Reduced gap */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .menu-item {
@@ -259,13 +258,13 @@
 
         .menu-item-image {
             width: 100%;
-            height: 200px; /* Reduced height */
+            height: 200px;
             object-fit: cover;
             background-color: #eee;
         }
 
         .menu-item-content {
-            padding: 1.2rem; /* Reduced padding */
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -273,7 +272,7 @@
 
         .menu-item-title {
             font-family: var(--font-headings);
-            font-size: 1.15rem; /* Reduced font size */
+            font-size: 1.15rem;
             color: var(--dark-color);
             margin-bottom: 0.5rem;
         }
@@ -281,11 +280,11 @@
         .menu-item-description {
             flex-grow: 1;
             margin-bottom: 1rem;
-            font-size: 0.9rem; /* Reduced font size */
+            font-size: 0.9rem;
         }
 
         .menu-item-price {
-            font-size: 1rem; /* Reduced font size */
+            font-size: 1rem;
             font-weight: 700;
             color: var(--primary-color);
             text-align: right;
@@ -352,7 +351,7 @@
             </div>
             <div class="menu-grid">
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1572442388796-11668a7ec2f4?q=80&w=1887&auto=format&fit=crop" alt="Caffè Latte" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a7ec2f4?q=80&w=1887&auto=format&fit=crop" alt="Caffè Latte" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/c7a17a/333333?text=Caffè+Latte';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="latte_name">Caffè Latte</h3>
                         <p class="menu-item-description" data-key="latte_desc">Our rich, full-bodied espresso balanced with steamed milk and a light layer of foam. A perfect start to your morning.</p>
@@ -360,7 +359,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1557006021-b961553985c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Macchiato" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1557006021-b961553985c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Macchiato" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d4ac87/333333?text=Caramel+Macchiato';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="macchiato_name">Caramel Macchiato</h3>
                         <p class="menu-item-description" data-key="macchiato_desc">Freshly steamed milk with vanilla-flavored syrup, marked with espresso and topped with a caramel drizzle.</p>
@@ -368,7 +367,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1511920183353-3c9c35b572e3?q=80&w=1887&auto=format&fit=crop" alt="Caffè Americano" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1511920183353-3c9c35b572e3?q=80&w=1887&auto=format&fit=crop" alt="Caffè Americano" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5a3a22/ffffff?text=Caffè+Americano';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="americano_name">Caffè Americano</h3>
                         <p class="menu-item-description" data-key="americano_desc">Espresso shots topped with hot water to produce a light layer of crema in a cup with the depth of a classic coffee.</p>
@@ -384,7 +383,7 @@
             </div>
             <div class="menu-grid">
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1570577936162-65207c082717?q=80&w=1958&auto=format&fit=crop" alt="Java Chip Frappuccino" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1570577936162-65207c082717?q=80&w=1958&auto=format&fit=crop" alt="Java Chip Frappuccino" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/6b4f4f/ffffff?text=Java+Chip+Frapp';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="javachip_name">Java Chip Frappuccino®</h3>
                         <p class="menu-item-description" data-key="javachip_desc">We blend mocha sauce, Frappuccino® chips with coffee, milk and ice, then top it with whipped cream and a mocha drizzle.</p>
@@ -392,7 +391,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1626082627936-b942369680c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Frappuccino" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1626082627936-b942369680c6?q=80&w=1887&auto=format&fit=crop" alt="Caramel Frappuccino" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/c8a47e/ffffff?text=Caramel+Frapp';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="caramelfrapp_name">Caramel Frappuccino®</h3>
                         <p class="menu-item-description" data-key="caramelfrapp_desc">Caramel syrup meets coffee, milk and ice for a rendezvous in the blender, while whipped cream and caramel sauce layer the love on top.</p>
@@ -400,7 +399,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1625224322499-56d13589c372?q=80&w=1887&auto=format&fit=crop" alt="Strawberry Crème Frappuccino" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1625224322499-56d13589c372?q=80&w=1887&auto=format&fit=crop" alt="Strawberry Crème Frappuccino" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e4a0b7/ffffff?text=Strawberry+Frapp';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="strawberry_name">Strawberry Crème Frappuccino®</h3>
                         <p class="menu-item-description" data-key="strawberry_desc">Summer's favorite fruit is the star of this delicious Frappuccino® Blended Beverage—a blend of ice, milk and strawberry puree.</p>
@@ -416,7 +415,7 @@
             </div>
             <div class="menu-grid">
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1578899817502-06951a35b448?q=80&w=1887&auto=format&fit=crop" alt="Chai Tea Latte" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1578899817502-06951a35b448?q=80&w=1887&auto=format&fit=crop" alt="Chai Tea Latte" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/c89f9c/333333?text=Chai+Tea+Latte';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="chai_name">Chai Tea Latte</h3>
                         <p class="menu-item-description" data-key="chai_desc">Black tea infused with cinnamon, clove and other warming spices is combined with steamed milk for the perfect balance of sweet and spicy.</p>
@@ -424,7 +423,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1563822552862-8c85c0a3f019?q=80&w=1887&auto=format&fit=crop" alt="Matcha Tea Latte" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1563822552862-8c85c0a3f019?q=80&w=1887&auto=format&fit=crop" alt="Matcha Tea Latte" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/88b04b/ffffff?text=Matcha+Latte';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="matcha_name">Matcha Tea Latte</h3>
                         <p class="menu-item-description" data-key="matcha_desc">A smooth and creamy matcha sweetened just right and served with steamed milk. A perfect zen-like beverage.</p>
@@ -432,7 +431,7 @@
                     </div>
                 </article>
                  <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1601923480790-2559b3f2a895?q=80&w=1964&auto=format&fit=crop" alt="Iced Passion Tango Tea" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1601923480790-2559b3f2a895?q=80&w=1964&auto=format&fit=crop" alt="Iced Passion Tango Tea" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d85a62/ffffff?text=Iced+Passion+Tea';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="passion_name">Iced Passion Tango™ Tea</h3>
                         <p class="menu-item-description" data-key="passion_desc">A vibrant blend of hibiscus, lemongrass and apple, hand-shaken with ice. A refreshingly caffeine-free herbal tea.</p>
@@ -448,7 +447,7 @@
             </div>
             <div class="menu-grid">
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1587574266813-59752535b47a?q=80&w=1947&auto=format&fit=crop" alt="Butter Croissant" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1587574266813-59752535b47a?q=80&w=1947&auto=format&fit=crop" alt="Butter Croissant" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f0e2b6/333333?text=Croissant';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="croissant_name">Butter Croissant</h3>
                         <p class="menu-item-description" data-key="croissant_desc">A classic, flaky, and buttery croissant. Pairs perfectly with any of our coffee or espresso beverages.</p>
@@ -456,7 +455,7 @@
                     </div>
                 </article>
                 <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1616692224168-3565cf859a0f?q=80&w=1887&auto=format&fit=crop" alt="Chocolate Chip Cookie" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1616692224168-3565cf859a0f?q=80&w=1887&auto=format&fit=crop" alt="Chocolate Chip Cookie" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/b08048/ffffff?text=Cookie';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="cookie_name">Chocolate Chip Cookie</h3>
                         <p class="menu-item-description" data-key="cookie_desc">Soft and chewy, packed with semisweet chocolate chunks. A timeless treat to satisfy your sweet tooth.</p>
@@ -464,7 +463,7 @@
                     </div>
                 </article>
                  <article class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1590398092289-5b7f14371758?q=80&w=1887&auto=format&fit=crop" alt="Blueberry Muffin" class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1590398092289-5b7f14371758?q=80&w=1887&auto=format&fit=crop" alt="Blueberry Muffin" class="menu-item-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d4b2a7/333333?text=Muffin';">
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="muffin_name">Blueberry Muffin</h3>
                         <p class="menu-item-description" data-key="muffin_desc">A fluffy muffin bursting with juicy blueberries and a hint of lemon, topped with a crunchy sugar crust.</p>
